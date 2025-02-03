@@ -12,6 +12,9 @@ from googleapiclient.http import MediaFileUpload
 from datetime import datetime
 import asyncio
 
+import aiohttp
+from aiohttp import web
+
 
 
 # from discord import app_commands
@@ -87,7 +90,7 @@ async def finish_task(interaction: discord.Interaction, file: discord.Attachment
 
         # Search for the thread folder in the team's directory
         query = f"'{team_folder_id}' in parents and name = '{thread_name}' and mimeType = 'application/vnd.google-apps.folder'"
-        response = drive_service.files().list(q=query, fields="files(id)").execute()
+        response = drive_service.files().list(q=query, fields="files(id)").execute()    
         folder = response.get("files", [])
         
         if not folder:
@@ -282,10 +285,24 @@ async def send_task_message(
     except Exception as e:
         await print(f"An error occurred: {str(e)}")
 
+async def run_web_server():
+    app = web.Application()
+    app.router.add_get('/', lambda request: web.Response(text="Bot is running!"))
+    runner = web.AppRunner(app)
+    await runner.setup()
+    port = int(os.environ.get('PORT', 8080))  # Use PORT env var or default to 8080
+    site = web.TCPSite(runner, '0.0.0.0', port)
+    await site.start()
+    print(f"Web server running on port {port}")
+
 @client.event
 async def on_ready():
     await tree.sync(guild=discord.Object(id=GUILD_ID))
-    print("Command Added")
-# Run the bot
+    print("Commands synced")
+    # Start web server in background
+    client.loop.create_task(run_web_server())
+
+# Run the bot with both Discord and web server
 client.run(DISCORD_TOKEN)
+
 
