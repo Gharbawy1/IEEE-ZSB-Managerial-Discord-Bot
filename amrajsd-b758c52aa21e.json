@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "amrajsd",
+  "private_key_id": "b758c52aa21ee8a917f422083d9622e617af6b18",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDzGHR93ODPXO4B\n906EnV3eiZ+gmpx2hoAMji/oNyUcS8C3Bse8Rc648SLWuilKcIjqKmZ9Lrhoav0L\nSS7WQ5sKuoEGKRnMO77fJlnFUKMRPP2AvmAFvksUZGlwUTQXMKFPMNNim7UlvydG\nMOdhXWjxRq052fYBE0ehnyPXHwS8ZdQ95P2lYhJNRI5yUTdvfAELKqTckjkacho3\neXgaV5hcVO7o2t0EbT+H6Z8aTUBwBWa3c4C/aAc92PjwKy3LvnFt5QqRmVd4zJnU\nnV+HEvt7na8b06HMlUoEqjcbK4gAidlNlLXU+CdWZogrKrUf4hfUiWVVU7Qs1Oty\nP/mtYTXbAgMBAAECggEASoE2QtUNecBrmeKoB/ELMgdQCzMXvSPf3vk9KZitIQz+\nlZnYYZWrk/cjzFfmC9CNxecU3k0Ra79OqsTVPAogXJtoq/Cw3W16RH5GiTj7oW7l\n6y1t1JTMAgX8YtYgdvMKnXDDeLdsP5NkgBjA8ZBld31H3jE1OoMkMx7JJ0d0diDO\nh24IJ6bG9XOyacVMemQkzW+Voi1tZAvaHp8e2F5dLMLSF2IDGs8qqucxn0PdhhLW\ngN+e23XCFs7PqnHc/7qJJBAThw7pQ4DGr0xI+94/QAbAvqM6WSvO0X+BzFR15ja2\nygaDFwQEPX6/60q24gzQ3oZAhnlO3xonHM4ob6WpwQKBgQD+knGHZcB0oBzrHe/Q\nLBMA2dskkyW4HLw7G1t+X/I7rhxYKwOd/obzp9CFLqq48N/CC3LTzMD0Awfox4uM\nXLE3Hyu2yXr4jzNp5/+SY1h8lCph/+Cdxg4WKFQ0wI3E1oAqYTUoFAGbIqGLv7eu\n9OQmE0ujSySyoayh6FXIABm6KwKBgQD0dYgdSoeBiDX9phs5o7R2bCMvaKla3ThH\nO2dK6+iKmZLqeZODEmlzfI9RqX5swg4BnRBN+31t9+SVLVHd02NFsbAHS8vhNs7r\nJnec9fUihgAmunlwgezVOUURKnyyynDoFr9ICybI87mZah2hCa4LtmS+sPgot5L2\nOVLQ+AQLEQKBgFsG7kVl4t1Q60Y/HCMpv1nMjImVfCVLURspexvDHxCr/0KfjtmN\ny5+QYAVfXHho2Pm/sj19t3kJJGjeAU4dTtjQ8oaXoLsEKXQzGrWzhE53hHgqUJzZ\n1uuhXArI12iM8qM0wxcjoDdiuLUJxppuwq3CtIcdNXASU3JJa3LqZkilAoGBAMQi\nwLDvqUUOanM2oMVgSVxyatCQ4sBamdrdGIUOPidmDHBAV1Bkp2LXX44ftaXBFMfK\nothOnVZr/GSMVhDql83FQPy5nbz24pHc7T9sP+ARL3HjT6grNj/lkTqyohY5QtmT\n1qkQ+W9lzVX/xAH+6DvRfYdaKeFRWIJhf8bWFzhhAoGBAJcxJt6yjV/OyjvmkV6L\nK5aSZwks7ller21chebII1zVCFZaisvcYzhCnncfXdIyn2O+OGd9VQcEsjJCSZb+\ne+lYAPu6e9lYBToUQUlLsYiANYiCp6Z4G6JFVDwGfem4pkvyHpM5Degu2oEnpq5+\ne3zHT7/ssjdugKwTv6Cdhw+r\n-----END PRIVATE KEY-----\n",
+  "client_email": "managrial-bot@amrajsd.iam.gserviceaccount.com",
+  "client_id": "112498054329708154624",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/managrial-bot%40amrajsd.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
