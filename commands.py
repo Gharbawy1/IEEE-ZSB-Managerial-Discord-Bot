@@ -13,29 +13,56 @@ SCOPES = [
     'https://www.googleapis.com/auth/spreadsheets',
 ]
 FOLDER_ID = '1fJL15MniB6TtOU2AtiN04VLeRRkCeWMg'  # Replace with your Google Drive folder ID
-SERVICE_ACCOUNT_FILE = 'amrajsd-6fb5f995cb7c.json'  # Replace with the path to your service account JSON file
+#SERVICE_ACCOUNT_FILE = 'amrajsd-ad5fd088004e.json'  # Replace with the path to your service account JSON file
 
+def get_service_account_credentials():
+    """Retrieve service account credentials from environment variables."""
+    try:
+        service_account_info = {
+            "type": "service_account",
+            "project_id": os.getenv("GCP_PROJECT_ID"),
+            "private_key_id": os.getenv("GCP_PRIVATE_KEY_ID"),
+            "private_key": os.getenv("GCP_PRIVATE_KEY").replace('\\n', '\n'),  # Ensure correct formatting
+            "client_email": os.getenv("GCP_CLIENT_EMAIL"),
+            "client_id": os.getenv("GCP_CLIENT_ID"),
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://oauth2.googleapis.com/token",
+            "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+            "client_x509_cert_url": os.getenv("GCP_CLIENT_X509_CERT_URL"),
+            "universe_domain": "googleapis.com"
+        }
 
+        return service_account.Credentials.from_service_account_info(service_account_info, scopes=SCOPES)
+    
+    except Exception as e:
+        print(f"Failed to load service account credentials: {e}")
+        return None
 
 def authenticate_google_drive():
     """Authenticate with Google Drive API using a service account."""
     try:
-        # Load service account credentials
-        creds = service_account.Credentials.from_service_account_file(
-            SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+        # Load service account credentials In dev
+        # creds = service_account.Credentials.from_service_account_file(
+        #     SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+        
+        creds = get_service_account_credentials()
+        
         # Build the Google Drive service
         return build('drive', 'v3', credentials=creds)
     except Exception as e:
         print(f"Failed to authenticate with Google Drive: {e}")
         return None
 
-
 def authenticate_google_sheets():
     """Authenticate with Google Sheets API using a service account."""
     try:
-        creds = service_account.Credentials.from_service_account_file(
-            SERVICE_ACCOUNT_FILE, scopes=SCOPES
-        )
+        #In dev
+        # creds = service_account.Credentials.from_service_account_file(
+        #     SERVICE_ACCOUNT_FILE, scopes=SCOPES
+        # )
+        
+        creds = get_service_account_credentials()
+        
         return build('sheets', 'v4', credentials=creds)
     except Exception as e:
         print(f"Failed to authenticate with Google Sheets: {e}")
@@ -108,6 +135,3 @@ def create_tab_in_sheet(sheet_id: str, tab_name: str):
 
     except Exception as e:
         print(f"An error occurred while creating the tab: {e}")
-
-
-
